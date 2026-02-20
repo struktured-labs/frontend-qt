@@ -21,7 +21,7 @@
 
 #include <qprojectm_mainwindow.hpp>
 
-#include <libprojectM/projectM.h>
+#include <projectM-4/projectM.h>
 
 #include <jack/jack.h>
 
@@ -177,7 +177,7 @@ process (jack_nframes_t nframes, void *arg)
 
 	//memcpy (out, in,sizeof (jack_default_audio_sample_t) * nframes);
 
-    projectm_pcm_add_float_1ch_data(globalPM, in, nframes);
+    projectm_pcm_add_float(globalPM, in, nframes, PROJECTM_MONO);
 //		printf("%x %f\n",nframes,in[128]);
 
 	return 0;
